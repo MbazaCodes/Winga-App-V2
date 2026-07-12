@@ -7,8 +7,8 @@ export default function AuthLogo() {
       <Image
         src="/logo/logo.png"
         alt="Winga"
-        width={48}
-        height={48}
+        width={52}
+        height={52}
         priority
       />
       <span className={styles.wordmark}>Winga</span>

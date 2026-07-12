@@ -20,20 +20,14 @@ export default function SplashPage() {
 
       <div className={styles.logoBox}>
 
-        <div className={styles.logoRing}>
-          <Image
-            src="/logo/logo.png"
-            alt="Winga"
-            width={100}
-            height={100}
-            priority
-            className={styles.logoImg}
-          />
-        </div>
-
-        <h1 className={styles.brand}>
-          <span className={styles.brandWhite}>Wing</span><span className={styles.brandGold}>a</span>
-        </h1>
+        <Image
+          src="/logo/logo.png"
+          alt="Winga"
+          width={160}
+          height={160}
+          priority
+          className={styles.logoImg}
+        />
 
         <p className={styles.tagline}>Tanzania&apos;s Services Guide</p>
 
