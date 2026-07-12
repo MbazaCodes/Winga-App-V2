@@ -1,0 +1,7 @@
+{
+    // Prevent VS Code from saving files with a UTF-8 BOM,
+    // which breaks Next.js tsconfig.json parsing and Lightning CSS.
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true
+}
