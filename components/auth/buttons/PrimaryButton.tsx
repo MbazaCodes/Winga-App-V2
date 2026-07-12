@@ -1,28 +1,26 @@
-.button{
-    width:100%;
-    height:56px;
+import styles from "./PrimaryButton.module.css";
 
-    border:none;
-    border-radius:18px;
+type Props = {
+  text: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+};
 
-    background:linear-gradient(135deg,#2563EB,#4F46E5);
-
-    color:#fff;
-
-    font-size:16px;
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 15px 35px rgba(37,99,235,.30);
-}
-
-.button:disabled{
-    opacity:.5;
-    cursor:not-allowed;
+export default function PrimaryButton({
+  text,
+  onClick,
+  disabled = false,
+  type = "button",
+}: Props) {
+  return (
+    <button
+      className={styles.button}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    >
+      {text}
+    </button>
+  );
 }

@@ -1,4 +1,4 @@
-﻿import styles from "./AuthHeader.module.css";
+import styles from "./AuthHeader.module.css";
 
 type Props = {
   title: string;

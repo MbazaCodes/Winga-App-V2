@@ -1,4 +1,4 @@
-﻿import { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Background } from "@/components/ui";
 
 import styles from "./AuthLayout.module.css";

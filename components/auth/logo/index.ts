@@ -1,1 +1,1 @@
-﻿export {default as AuthLogo} from "./AuthLogo";
+export {default as AuthLogo} from "./AuthLogo";
