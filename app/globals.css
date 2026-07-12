@@ -16,7 +16,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: var(--font-family);
-  background: linear-gradient(160deg, #E8E4FF 0%, #EEEEFF 50%, #EBE8FF 100%);
+  background: #FFFFFF;
   color: var(--text-primary);
 }
 

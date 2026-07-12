@@ -17,26 +17,20 @@ export default function SplashPage() {
 
   return (
     <main className={styles.page}>
-
       <div className={styles.logoBox}>
-
         <Image
           src="/logo/logo.png"
           alt="Winga"
-          width={160}
-          height={160}
+          width={200}
+          height={200}
           priority
           className={styles.logoImg}
         />
-
         <p className={styles.tagline}>Tanzania&apos;s Services Guide</p>
-
       </div>
-
       <div className={styles.loader}>
         <div className={styles.bar} />
       </div>
-
     </main>
   );
 }
