@@ -1,0 +1,38 @@
+.wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.label{
+    font-size:14px;
+    font-weight:600;
+    color:#475569;
+}
+
+.input{
+
+    width:100%;
+    height:56px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    padding:0 18px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    transition:.25s;
+}
+
+.input:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
