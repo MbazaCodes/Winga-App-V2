@@ -3,13 +3,13 @@ param(
 )
 
 # CRITICAL: PowerShell's Set-Location does NOT change the .NET working
-# directory, so [System.IO.File] relative paths break. Sync them.
+# directory. .NET file APIs (ReadAllBytes, etc.) use the .NET dir. Sync them.
 [Environment]::CurrentDirectory = $Path
 Set-Location $Path
 
 Write-Host "Stripping BOM in: $Path" -ForegroundColor Cyan
 
-$exts = @('.json','.css','.ts','.tsx','.js','.jsx','.mjs','.html','.md')
+$exts = @('.json','.css','.ts','.tsx','.js','.jsx','.mjs','.html','.md','.env','.env.local','.env.example')
 $files = Get-ChildItem -Path $Path -Recurse -File -ErrorAction SilentlyContinue |
          Where-Object {
              $exts -contains $_.Extension.ToLower() -and
