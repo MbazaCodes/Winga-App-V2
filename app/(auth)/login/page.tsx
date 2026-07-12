@@ -17,24 +17,20 @@ export default function LoginPage() {
   return (
     <AuthLayout>
       <AuthContainer>
+
+        <AuthLogo />
+
         <AuthCard>
-
-          <AuthLogo />
-
           <AuthHeader
             title="Karibu tena! 👋"
             subtitle="Ingiza namba yako au Winga ID — utatumia code ya OTP bure."
           />
-
           <LoginMethodToggle />
-
           <PhoneInput />
-
           <PrimaryButton text="Pata Code ya OTP →" />
-
           <AuthNotice text="SMS ya OTP ni ya bure na salama kabisa." />
-
         </AuthCard>
+
       </AuthContainer>
     </AuthLayout>
   );

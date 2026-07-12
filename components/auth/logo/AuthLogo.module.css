@@ -1,12 +1,11 @@
 .logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .logoImg {
-  width: 80px !important;
-  height: 80px !important;
+  width: 90px !important;
+  height: 90px !important;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
