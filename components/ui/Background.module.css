@@ -3,7 +3,7 @@
   inset: 0;
   overflow: hidden;
   z-index: -1;
-  background: linear-gradient(145deg, #EDE9FF 0%, #FDF9FF 50%, #F0EEFF 100%);
+  background: linear-gradient(160deg, #E8E4FF 0%, #EEEEFF 50%, #EBE8FF 100%);
 }
 
 .orb {
@@ -17,27 +17,27 @@
   width: 420px;
   height: 420px;
   background: #5B4FCF;
-  top: -120px;
-  left: -120px;
-  opacity: .20;
+  top: -140px;
+  left: -140px;
+  opacity: .14;
 }
 
 .gold {
   width: 340px;
   height: 340px;
   background: #FDBA12;
-  bottom: -80px;
-  right: -80px;
-  opacity: .22;
+  bottom: -100px;
+  right: -100px;
+  opacity: .12;
 }
 
 .light {
   width: 260px;
   height: 260px;
-  background: #9B8EF8;
+  background: #A89EF8;
   top: 42%;
   left: 58%;
-  opacity: .16;
+  opacity: .10;
   animation-delay: -4s;
 }
 
