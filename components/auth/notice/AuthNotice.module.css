@@ -1,12 +1,12 @@
 .notice {
-  margin-top: 18px;
-  padding: 13px 16px;
+  margin-top: 12px;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
-  background: rgba(91,79,207,0.08);
-  border: 1px solid rgba(91,79,207,0.14);
+  background: rgba(91,79,207,0.07);
+  border: 1px solid rgba(91,79,207,0.12);
   color: var(--primary);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
+  font-size: 12px;
+  font-weight: 500;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.5;
 }

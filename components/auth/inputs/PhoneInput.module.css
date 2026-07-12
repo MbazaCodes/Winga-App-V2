@@ -1,13 +1,13 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 5px;
+  margin-bottom: 14px;
 }
 
 .label {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
+  font-size: 11px;
+  font-weight: 700;
   color: var(--text-secondary);
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -16,7 +16,7 @@
 .phoneBox {
   display: flex;
   align-items: center;
-  height: 56px;
+  height: 50px;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: rgba(255,255,255,0.70);
@@ -27,19 +27,20 @@
 
 .phoneBox:focus-within {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(91,79,207,0.14);
+  box-shadow: 0 0 0 3px rgba(91,79,207,0.12);
 }
 
 .prefix {
-  padding: 0 16px;
-  font-weight: var(--fw-semibold);
+  padding: 0 14px;
+  font-weight: 600;
   color: var(--text-primary);
   border-right: 1px solid rgba(91,79,207,0.12);
   height: 100%;
   display: flex;
   align-items: center;
-  font-size: var(--fs-sm);
+  font-size: 13px;
   background: rgba(255,255,255,0.4);
+  white-space: nowrap;
 }
 
 .input {
@@ -48,14 +49,12 @@
   border: none;
   background: none;
   outline: none;
-  padding: 0 16px;
-  font-size: var(--fs-md);
+  padding: 0 14px;
+  font-size: 15px;
   color: var(--text-primary);
 }
 
-.input::placeholder {
-  color: var(--text-light);
-}
+.input::placeholder { color: var(--text-light); }
 
 .help {
   font-size: 11px;

@@ -1,17 +1,17 @@
 .header {
-  margin-bottom: 26px;
+  margin-bottom: 16px;
 }
 
 .header h1 {
-  font-size: var(--fs-2xl);
-  font-weight: var(--fw-extrabold);
+  font-size: 22px;
+  font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1.25;
 }
 
 .header p {
   color: var(--text-light);
-  line-height: 1.7;
-  font-size: var(--fs-sm);
+  line-height: 1.6;
+  font-size: 13px;
 }
