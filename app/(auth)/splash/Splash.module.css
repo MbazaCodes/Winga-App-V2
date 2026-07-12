@@ -5,61 +5,132 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(160deg, #3D31A8 0%, #5B4FCF 55%, #7B6FE8 100%);
+  background: linear-gradient(160deg, #2E1F9E 0%, #5B4FCF 50%, #7B6FE8 100%);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Ambient blobs so background feels alive */
+.page::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(253,186,18,.12);
+  top: -180px;
+  right: -180px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  bottom: -140px;
+  left: -140px;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+/* ── Logo ── */
 .logoBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: popIn .8s cubic-bezier(.34,1.56,.64,1) both;
+  gap: 0;
+  animation: popIn .9s cubic-bezier(.34,1.56,.64,1) both;
+  position: relative;
+  z-index: 1;
 }
 
-.logoBox h1 {
-  margin-top: 18px;
-  font-size: 40px;
+/* Frosted ring that sits behind the logo image */
+.logoRing {
+  width: 140px;
+  height: 140px;
+  border-radius: 36px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255,255,255,.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25),
+    inset 0 1px 1px rgba(255,255,255,.35);
+  margin-bottom: 24px;
+}
+
+/* Blend the white PNG background away */
+.logoImg {
+  mix-blend-mode: multiply;
+  width: 96px !important;
+  height: 96px !important;
+  object-fit: contain;
+  filter: contrast(1.05);
+}
+
+/* ── Brand name ── */
+.brand {
+  font-size: 46px;
   font-weight: 800;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, #fff 30%, #FDBA12 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
-.logoBox p {
-  margin-top: 8px;
-  font-size: 13px;
-  color: rgba(255,255,255,.65);
-  letter-spacing: 1.5px;
+.brandWhite {
+  color: #ffffff;
+}
+
+.brandGold {
+  color: #FDBA12;
+}
+
+/* ── Tagline ── */
+.tagline {
+  font-size: 12px;
+  color: rgba(255,255,255,.60);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  animation: fadeUp .7s .4s ease both;
+  font-weight: 500;
+  animation: fadeUp .7s .5s ease both;
 }
 
+/* ── Progress bar ── */
 .loader {
-  width: 200px;
-  height: 5px;
-  margin-top: 56px;
-  background: rgba(255,255,255,.18);
+  width: 180px;
+  height: 4px;
+  margin-top: 60px;
+  background: rgba(255,255,255,.15);
   border-radius: 999px;
   overflow: hidden;
   animation: fadeUp .6s .6s ease both;
+  position: relative;
+  z-index: 1;
 }
 
 .bar {
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,.5), #FDBA12);
+  background: linear-gradient(90deg, rgba(255,255,255,.4), #FDBA12);
   border-radius: 999px;
-  animation: load 2.3s .8s linear forwards;
+  animation: load 2.5s .8s ease forwards;
 }
 
+/* ── Keyframes ── */
 @keyframes popIn {
-  from { opacity: 0; transform: scale(.65) translateY(20px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from { opacity: 0; transform: scale(.70) translateY(24px); }
+  to   { opacity: 1; transform: scale(1)  translateY(0); }
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 

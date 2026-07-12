@@ -2,55 +2,47 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-
 import Image from "next/image";
-
 import styles from "./Splash.module.css";
 
 export default function SplashPage() {
+  const router = useRouter();
 
-    const router = useRouter();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.replace("/login");
+    }, 2800);
+    return () => clearTimeout(timer);
+  }, [router]);
 
-    useEffect(() => {
+  return (
+    <main className={styles.page}>
 
-        const timer = setTimeout(() => {
+      <div className={styles.logoBox}>
 
-            router.replace("/onboarding");
+        <div className={styles.logoRing}>
+          <Image
+            src="/logo/logo.png"
+            alt="Winga"
+            width={100}
+            height={100}
+            priority
+            className={styles.logoImg}
+          />
+        </div>
 
-        },2500);
+        <h1 className={styles.brand}>
+          <span className={styles.brandWhite}>Wing</span><span className={styles.brandGold}>a</span>
+        </h1>
 
-        return ()=>clearTimeout(timer);
+        <p className={styles.tagline}>Tanzania&apos;s Services Guide</p>
 
-    },[router]);
+      </div>
 
-    return(
+      <div className={styles.loader}>
+        <div className={styles.bar} />
+      </div>
 
-        <main className={styles.page}>
-
-            <div className={styles.logoBox}>
-
-                <Image
-                    src="/logo/logo.png"
-                    alt="Winga"
-                    width={120}
-                    height={120}
-                    priority
-                />
-
-                <h1>Winga</h1>
-
-                <p>Tanzania's Services Guide</p>
-
-            </div>
-
-            <div className={styles.loader}>
-
-                <div className={styles.bar}></div>
-
-            </div>
-
-        </main>
-
-    );
-
+    </main>
+  );
 }
