@@ -1,17 +1,12 @@
-.notice{
-
-    margin-top:20px;
-
-    padding:14px;
-
-    border-radius:16px;
-
-    background:#EFF6FF;
-
-    color:#2563EB;
-
-    font-size:14px;
-
-    text-align:center;
-
+.notice {
+  margin-top: 18px;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(91,79,207,0.08);
+  border: 1px solid rgba(91,79,207,0.14);
+  color: var(--primary);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  line-height: 1.6;
 }

@@ -1,122 +1,68 @@
-.page{
-
-    width:100%;
-
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:linear-gradient(
-        135deg,
-        #EEF7FF,
-        #FFFFFF,
-        #F5FAFF
-    );
-
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(160deg, #3D31A8 0%, #5B4FCF 55%, #7B6FE8 100%);
 }
 
-.logoBox{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    animation:fade 1s ease;
-
+.logoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: popIn .8s cubic-bezier(.34,1.56,.64,1) both;
 }
 
-.logoBox h1{
-
-    margin-top:20px;
-
-    font-size:38px;
-
-    font-weight:700;
-
-    color:#2563EB;
-
+.logoBox h1 {
+  margin-top: 18px;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #fff 30%, #FDBA12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.logoBox p{
-
-    margin-top:8px;
-
-    color:#64748B;
-
+.logoBox p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,.65);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: fadeUp .7s .4s ease both;
 }
 
-.loader{
-
-    width:220px;
-
-    height:6px;
-
-    margin-top:50px;
-
-    background:#E5E7EB;
-
-    border-radius:999px;
-
-    overflow:hidden;
-
+.loader {
+  width: 200px;
+  height: 5px;
+  margin-top: 56px;
+  background: rgba(255,255,255,.18);
+  border-radius: 999px;
+  overflow: hidden;
+  animation: fadeUp .6s .6s ease both;
 }
 
-.bar{
-
-    width:0;
-
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        #2563EB,
-        #FDBA12
-    );
-
-    animation:loading 2.3s linear forwards;
-
+.bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,.5), #FDBA12);
+  border-radius: 999px;
+  animation: load 2.3s .8s linear forwards;
 }
 
-@keyframes loading{
-
-    from{
-
-        width:0;
-
-    }
-
-    to{
-
-        width:100%;
-
-    }
-
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.65) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-@keyframes fade{
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:none;
-
-    }
-
+@keyframes load {
+  to { width: 100%; }
 }

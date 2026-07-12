@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import "../styles/tokens.css";
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,7 +16,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: var(--font-family);
-  background: var(--background);
+  background: linear-gradient(145deg, #EDE9FF 0%, #FDF9FF 50%, #F0EEFF 100%);
   color: var(--text-primary);
 }
 
@@ -38,14 +37,11 @@ button {
   cursor: pointer;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
   font: inherit;
   outline: none;
 }
 
-ul,
-ol {
+ul, ol {
   list-style: none;
 }

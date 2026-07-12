@@ -1,78 +1,80 @@
-:root{
-
-  /* Brand */
-  --primary:#4F46E5;
-  --primary-dark:#4338CA;
-  --secondary:#FDBA12;
-  --accent:#7C3AED;
+:root {
+  /* Brand — Winga purple + gold */
+  --primary: #5B4FCF;
+  --primary-dark: #3D31A8;
+  --primary-light: #7B6FE8;
+  --secondary: #FDBA12;
+  --secondary-dark: #E0A200;
+  --accent: #7C3AED;
 
   /* Background */
-  --background:#F8FAFC;
-  --surface:#FFFFFF;
+  --background: #EEEAFF;
+  --surface: #FFFFFF;
 
   /* Text */
-  --text-primary:#1E293B;
-  --text-secondary:#64748B;
-  --text-light:#94A3B8;
+  --text-primary: #1A1535;
+  --text-secondary: #4A4270;
+  --text-light: #8B85AE;
 
   /* Status */
-  --success:#22C55E;
-  --warning:#F59E0B;
-  --danger:#EF4444;
-  --info:#3B82F6;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+
+  /* Glass */
+  --glass-bg: rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.70);
 
   /* Typography */
-  --font-family:
-    Inter,
-    Poppins,
-    system-ui,
-    sans-serif;
+  --font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
 
-  --fs-xs:12px;
-  --fs-sm:14px;
-  --fs-md:16px;
-  --fs-lg:20px;
-  --fs-xl:28px;
-  --fs-2xl:36px;
+  --fs-xs: 11px;
+  --fs-sm: 13px;
+  --fs-md: 15px;
+  --fs-lg: 18px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
 
-  --fw-normal:400;
-  --fw-medium:500;
-  --fw-semibold:600;
-  --fw-bold:700;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
 
   /* Spacing */
-  --space-1:4px;
-  --space-2:8px;
-  --space-3:12px;
-  --space-4:16px;
-  --space-5:20px;
-  --space-6:24px;
-  --space-7:32px;
-  --space-8:40px;
-  --space-9:48px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
 
   /* Radius */
-  --radius-sm:12px;
-  --radius-md:18px;
-  --radius-lg:24px;
-  --radius-xl:32px;
-  --radius-pill:999px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-sm:0 2px 10px rgba(15,23,42,.05);
-  --shadow-md:0 10px 30px rgba(15,23,42,.08);
-  --shadow-lg:0 25px 60px rgba(15,23,42,.12);
+  --shadow-sm: 0 2px 10px rgba(67,49,180,.06);
+  --shadow-md: 0 10px 30px rgba(67,49,180,.12);
+  --shadow-lg: 0 24px 60px rgba(67,49,180,.18);
 
   /* Animation */
-  --transition-fast:.2s ease;
-  --transition:.3s ease;
-  --transition-slow:.5s ease;
+  --transition-fast: .2s ease;
+  --transition: .3s ease;
+  --transition-slow: .5s ease;
 }
 
-.glass{
-  background:rgba(255,255,255,.65);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border:1px solid rgba(255,255,255,.40);
-  box-shadow:var(--shadow-lg);
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
 }
