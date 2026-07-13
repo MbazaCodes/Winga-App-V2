@@ -1,5 +1,5 @@
 # Winga App — Supabase Local Config
-project_id = "winga-app"
+project_id = "kevdbsyiqelksxvmuped"
 
 [api]
 enabled = true
