@@ -513,6 +513,15 @@ VALUES
 ON CONFLICT (id) DO NOTHING;
 
 -- Storage policies
+-- Drop storage policies idempotently
+DROP POLICY IF EXISTS "avatars_public_read"  ON storage.objects;
+DROP POLICY IF EXISTS "avatars_auth_upload"  ON storage.objects;
+DROP POLICY IF EXISTS "avatars_read"         ON storage.objects;
+DROP POLICY IF EXISTS "avatars_upload"       ON storage.objects;
+DROP POLICY IF EXISTS "winga_docs_own"       ON storage.objects;
+DROP POLICY IF EXISTS "shopping_photos_auth" ON storage.objects;
+DROP POLICY IF EXISTS "shopping_upload"      ON storage.objects;
+
 CREATE POLICY "avatars_public_read"   ON storage.objects FOR SELECT USING (bucket_id = 'avatars');
 CREATE POLICY "avatars_auth_upload"   ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'avatars' AND auth.role() = 'authenticated');
 CREATE POLICY "winga_docs_own"        ON storage.objects FOR ALL   USING (bucket_id = 'winga-docs' AND auth.uid()::text = (storage.foldername(name))[1]);
