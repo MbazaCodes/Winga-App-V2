@@ -25,7 +25,7 @@ export default function EarningsPage() {
 
   return (
     <div className="bg-white">
-      <PageHeader title="Matumizi Yangu" showBack={false} />
+      <PageHeader title="Matumizi Yangu"  />
 
       {/* Summary cards */}
       <div className="px-5 mb-5">

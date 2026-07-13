@@ -11,7 +11,7 @@ const MOCK_CONVOS = [
 export default function MessagesPage() {
   return (
     <div className="bg-white">
-      <PageHeader title="Ujumbe" showBack={false} />
+      <PageHeader title="Ujumbe"  />
 
       <div className="px-5 pb-6">
         {MOCK_CONVOS.length === 0 ? (

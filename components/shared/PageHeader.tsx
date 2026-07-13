@@ -11,10 +11,12 @@ interface Props {
 export default function PageHeader({ title, showBack = true, right }: Props) {
   const router = useRouter()
   return (
-    <div className="flex items-center justify-between px-5 py-4">
+    <div className="flex items-center justify-between px-5 py-4 sticky top-0 bg-white z-10
+                    border-b border-card-border">
       {showBack ? (
         <button onClick={() => router.back()}
-          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-input-bg active:scale-90 transition-transform">
+          className="w-10 h-10 flex items-center justify-center rounded-2xl bg-input-bg
+                     active:scale-90 transition-transform">
           <ArrowLeft size={20} className="text-text-dark" />
         </button>
       ) : <div className="w-10" />}

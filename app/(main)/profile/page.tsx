@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Camera, ChevronRight, LogOut, Edit2, Check } from 'lucide-react'
+import { Camera, ChevronRight, LogOut, Edit2, Check, ArrowLeft } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { useAuthStore } from '@/store/authStore'
 import { signOut } from '@/lib/supabase/auth'
@@ -40,7 +40,10 @@ export default function ProfilePage() {
     <div className="bg-white">
       {/* Header */}
       <div className="px-5 pt-12 pb-6">
+        <div className="flex items-center gap-3">
+        <button onClick={() => router.back()} className="w-10 h-10 flex items-center justify-center rounded-2xl bg-input-bg active:scale-90 transition-transform"></button>
         <h1 className="text-xl font-extrabold text-text-dark">Wasifu Wangu</h1>
+      </div>
       </div>
 
       {/* Avatar + name */}

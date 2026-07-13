@@ -48,7 +48,7 @@ export default function RequestsPage() {
 
   return (
     <div className="bg-white">
-      <PageHeader title="Safari Zangu" showBack={false} />
+      <PageHeader title="Safari Zangu"  />
 
       {/* Filter tabs */}
       <div className="px-5 mb-4">
