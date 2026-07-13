@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #F8F9FC; color: #1A1A2E; -webkit-font-smoothing: antialiased; }
+}
+
+@layer components {
+  .btn-primary { @apply px-4 py-2.5 bg-primary text-white text-sm font-bold rounded-xl active:scale-95 transition-all disabled:opacity-50; }
+  .btn-ghost   { @apply px-4 py-2.5 border border-card-border text-text-mid text-sm font-semibold rounded-xl active:scale-95 transition-all; }
+  .card        { @apply bg-white rounded-2xl shadow-card border border-card-border; }
+  .input-field { @apply w-full h-11 bg-input-bg border-2 border-transparent rounded-xl px-3 text-sm text-text-dark placeholder:text-text-muted focus:border-primary focus:outline-none transition-all; }
+  .badge       { @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold; }
+  .badge-searching { @apply bg-yellow-50 text-yellow-700; }
+  .badge-accepted  { @apply bg-blue-50 text-blue-700; }
+  .badge-shopping  { @apply bg-purple-50 text-primary; }
+  .badge-completed { @apply bg-green-50 text-green-700; }
+  .badge-cancelled { @apply bg-red-50 text-red-600; }
+  .badge-starter   { @apply bg-gray-100 text-gray-600; }
+  .badge-mid       { @apply bg-blue-50 text-blue-600; }
+  .badge-verified  { @apply bg-primary-soft text-primary; }
+  .sidebar-item    { @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-text-mid hover:bg-input-bg transition-colors cursor-pointer; }
+  .sidebar-item.active { @apply bg-primary-soft text-primary; }
+  .stat-card       { @apply card p-5 flex flex-col gap-2; }
+}

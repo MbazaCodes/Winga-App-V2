@@ -1,8 +1,8 @@
 {
-  "name": "winga-customer-pwa",
+  "name": "winga-pwa",
   "version": "1.0.0",
   "private": true,
-  "description": "Winga Customer Progressive Web Application — Tanzania's Trusted Shopping Guide",
+  "description": "Winga Shopping Guide PWA \u2014 Winga Dashboard",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
