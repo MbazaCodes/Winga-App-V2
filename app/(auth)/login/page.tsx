@@ -143,10 +143,12 @@ export default function LoginPage() {
           )}
         </div>
 
-        {/* Test credentials notice */}
-        <div className="mt-4 p-4 bg-primary-soft rounded-2xl text-center">
-          <p className="text-xs font-semibold text-primary">
-            🧪 Majaribio: Tumia OTP <span className="font-mono font-bold">123456</span>
+        {/* Demo mode notice */}
+        <div className="mt-4 p-4 bg-primary-soft rounded-2xl">
+          <p className="text-xs font-bold text-primary mb-1">🧪 Demo Mode — Majaribio</p>
+          <p className="text-xs text-primary/80">
+            Weka namba yoyote ya simu → OTP:
+            <span className="font-mono font-bold ml-1 text-sm">123456</span>
           </p>
         </div>
       </div>
