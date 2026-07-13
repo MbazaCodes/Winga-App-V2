@@ -1,0 +1,93 @@
+version: "3.8"
+
+# ============================================================
+# Winga App V2 — Full Local Development Stack
+# Includes: Supabase (API + DB + Studio + Auth + Storage)
+#            pgAdmin for direct DB access
+# ============================================================
+
+services:
+  # ── Supabase Studio (Admin Dashboard) ──────────────────────
+  studio:
+    image: supabase/studio:latest
+    container_name: winga-studio
+    restart: unless-stopped
+    ports:
+      - "54323:3000"
+    environment:
+      STUDIO_DEFAULT_ORGANIZATION: Winga Dev
+      STUDIO_DEFAULT_PROJECT: Local Winga Dev
+      SUPABASE_URL: http://localhost:54321
+      SUPABASE_PUBLIC_URL: http://localhost:54321
+      SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+      SUPABASE_SERVICE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU
+    depends_on:
+      api:
+        condition: service_healthy
+
+  # ── Supabase API (GoTrue Auth + PostgREST + Realtime + Storage) ──
+  api:
+    image: supabase/gotrue-js:latest
+    container_name: winga-api
+    restart: unless-stopped
+    ports:
+      - "54321:9999"
+    environment:
+      API_EXTERNAL_URL: http://localhost:54321
+      GOTRUE_API_HOST: 0.0.0.0
+      GOTRUE_API_PORT: 9999
+      API_SECRET: your-super-secret-jwt-token-with-at-least-32-characters-long!!
+      GOTRUE_DB_DRIVER: postgres
+      GOTRUE_DB_DATABASE_URL: postgres://supabase_admin:your-super-secret-and-long-postgres-password@db:5432/postgres
+      GOTRUE_SITE_URL: http://localhost:3000
+      GOTRUE_URI_ALLOW_LIST: http://localhost:3000,http://localhost:3001
+      GOTRUE_DISABLE_SIGNUP: false
+      GOTRUE_EXTERNAL_EMAIL_ENABLED: false
+      GOTRUE_EXTERNAL_PHONE_ENABLED: true
+      GOTRUE_SMS_AUTOCONFIRM: true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ── PostgreSQL Database ────────────────────────────────────
+  db:
+    image: supabase/postgres:15.8.1.040
+    container_name: winga-db
+    restart: unless-stopped
+    ports:
+      - "54322:5432"
+    environment:
+      POSTGRES_HOST: /var/run/postgresql
+      POSTGRES_DB: postgres
+      POSTGRES_USER: supabase_admin
+      POSTGRES_PASSWORD: your-super-secret-and-long-postgres-password
+      POSTGRES_PORT: 5432
+      PGRST_DB_SCHEMAS: public,storage
+    volumes:
+      - winga-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U supabase_admin -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── pgAdmin (Database GUI) ────────────────────────────────
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: winga-pgadmin
+    restart: unless-stopped
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@winga.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  winga-pgdata:
+    driver: local

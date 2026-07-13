@@ -1,0 +1,47 @@
+# Winga App — Supabase Local Configuration
+# Used by: supabase start (CLI) or docker-compose
+
+[project]
+id = "local-winga-dev"
+name = "Winga App Local"
+
+[api]
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public"]
+max_rows = 1000
+
+[db]
+port = 54322
+
+[studio]
+port = 54323
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3001", "http://localhost:3002"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = false
+double_confirm_changes = true
+secure_password_change = false
+
+[auth.sms]
+enable_signup = true
+max_frequency = "5m"
+otp_length = 6
+template = "Winga code: {{ .Token }}. Do not share."
+
+[auth.external.google]
+enabled = false
+
+[auth.external.apple]
+enabled = false
+
+[storage]
+file_size_limit = "50MiB"
+
+[realtime]
+enabled = true
