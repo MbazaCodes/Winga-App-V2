@@ -62,7 +62,7 @@ export default function LoginPage() {
     const nameIsPlaceholder = !user.name || PLACEHOLDER_NAMES.includes(user.name.toLowerCase())
     if (nameIsPlaceholder) { setStep('name'); return }
     // Route
-    router.replace(user.user_type === 'winga' ? '/winga/home' : '/home')
+    router.replace('/home')
   }, [digits, phone, verify, setUser, router])
 
   const handleSaveName = useCallback(async (name: string) => {
@@ -72,13 +72,13 @@ export default function LoginPage() {
     await saveName(user.id, name)
     setUser({ ...user, name })
     setNameLoading(false)
-    router.replace(user.user_type === 'winga' ? '/winga/home' : '/home')
+    router.replace('/home')
   }, [setUser, router])
 
   const handleSkipName = useCallback(() => {
     const { user } = useAuthStore.getState()
     if (!user) return
-    router.replace(user.user_type === 'winga' ? '/winga/home' : '/home')
+    router.replace('/home')
   }, [router])
 
   return (
