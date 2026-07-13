@@ -31,7 +31,7 @@ export default function SplashPage() {
           width={180}
           height={180}
           priority
-          style={{ mixBlendMode: 'multiply', objectFit: 'contain' }}
+          
         />
 
         <p className="text-xs font-semibold text-text-muted tracking-[2px] uppercase mt-2">

@@ -40,7 +40,7 @@ export default function OnboardingPage() {
 
       <div className="flex-1 flex flex-col items-center justify-center px-8 text-center">
         <Image src="/logo/logo.png" alt="Winga" width={90} height={90}
-          className="object-contain mb-8 [mix-blend-mode:multiply]" />
+          className="object-contain mb-8" />
         <div className="text-6xl mb-6">{emoji}</div>
         <h1 className="text-2xl font-extrabold text-text-dark mb-3">{title}</h1>
         <p className="text-sm text-text-muted leading-relaxed">{subtitle}</p>

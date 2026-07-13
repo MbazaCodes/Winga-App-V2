@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Bell, MapPin, Search, X, Star, Wifi } from 'lucide-react'
 import { useAuthStore } from '@/store/authStore'
@@ -85,7 +84,7 @@ export default function HomePage() {
               </h2>
               <span className="text-xs font-bold text-gold mt-2 block">Bonyeza hapa →</span>
             </div>
-            <Image src="/logo/logo.png" alt="" width={80} height={80} className="object-contain opacity-90" />
+            <div className="text-6xl opacity-90">🛍️</div>
           </div>
         </Link>
       </div>
