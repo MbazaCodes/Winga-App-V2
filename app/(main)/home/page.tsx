@@ -18,6 +18,10 @@ const CATEGORIES = [
   { id:'school',      label:'Shule',        emoji:'📚' },
   { id:'wholesale',   label:'Jumla',        emoji:'📦' },
   { id:'market',      label:'Sokoni',       emoji:'🏪' },
+  { id:'house',       label:'Nyumba/Ardhi', emoji:'🏠' },
+  { id:'cars',        label:'Magari',       emoji:'🚗' },
+  { id:'mc',          label:'MC Sherehe',   emoji:'🎤' },
+  { id:'dj',          label:'Music/DJ',     emoji:'🎧' },
   { id:'other',       label:'Nyingine',     emoji:'✨' },
 ]
 
@@ -117,7 +121,7 @@ export default function HomePage() {
             <Link href="/book" className="text-xs font-bold text-primary">Ona Zote</Link>
           </div>
           <div className="grid grid-cols-4 gap-3">
-            {CATEGORIES.slice(0, 8).map(cat => (
+            {CATEGORIES.slice(0, 12).map(cat => (
               <Link key={cat.id} href={`/book?category=${cat.id}`}>
                 <div className="flex flex-col items-center gap-1 p-3 bg-input-bg rounded-2xl
                                 active:scale-90 transition-transform">

@@ -7,17 +7,21 @@ import Button from '@/components/shared/Button'
 import type { ServiceType, DeliveryMethod } from '@/types/winga'
 
 const CATEGORIES = [
-  { id:'groceries',   label:'Vyakula',     emoji:'🛒' },
-  { id:'electronics', label:'Simu/Elec.',  emoji:'📱' },
-  { id:'clothes',     label:'Mavazi',      emoji:'👗' },
-  { id:'medicine',    label:'Dawa',        emoji:'💊' },
-  { id:'furniture',   label:'Samani',      emoji:'🛋️' },
-  { id:'hardware',    label:'Ujenzi',      emoji:'🔧' },
-  { id:'beauty',      label:'Uzuri',       emoji:'💄' },
-  { id:'school',      label:'Shule',       emoji:'📚' },
-  { id:'wholesale',   label:'Jumla',       emoji:'📦' },
-  { id:'market',      label:'Sokoni',      emoji:'🏪' },
-  { id:'other',       label:'Nyingine',    emoji:'✨' },
+  { id:'groceries',   label:'Vyakula',      emoji:'🛒' },
+  { id:'electronics', label:'Simu/Elec.',   emoji:'📱' },
+  { id:'clothes',     label:'Mavazi',       emoji:'👗' },
+  { id:'medicine',    label:'Dawa',         emoji:'💊' },
+  { id:'furniture',   label:'Samani',       emoji:'🛋️' },
+  { id:'hardware',    label:'Ujenzi',       emoji:'🔧' },
+  { id:'beauty',      label:'Uzuri',        emoji:'💄' },
+  { id:'school',      label:'Shule',        emoji:'📚' },
+  { id:'wholesale',   label:'Jumla',        emoji:'📦' },
+  { id:'market',      label:'Sokoni',       emoji:'🏪' },
+  { id:'house',       label:'Nyumba/Ardhi', emoji:'🏠' },
+  { id:'cars',        label:'Magari',       emoji:'🚗' },
+  { id:'mc',          label:'MC Sherehe',   emoji:'🎤' },
+  { id:'dj',          label:'Music/DJ',     emoji:'🎧' },
+  { id:'other',       label:'Nyingine',     emoji:'✨' },
 ]
 
 const SERVICE_OPTIONS: { value: ServiceType; label: string; price: string }[] = [
