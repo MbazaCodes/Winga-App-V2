@@ -126,10 +126,10 @@ export default function ProfilePage() {
           <p className="text-sm font-extrabold text-yellow-800">Jiunge kama Winga! 🚀</p>
           <p className="text-xs text-yellow-700 mt-0.5">Pata pesa ukisaidia wengine kununua</p>
         </div>
-        <button className="px-4 py-2 bg-gold text-white text-xs font-bold rounded-xl
+        <a href="/winga-register" className="px-4 py-2 bg-gold text-white text-xs font-bold rounded-xl
                            active:scale-90 transition-transform">
           Jisajili
-        </button>
+        </a>
       </div>
 
       {/* Logout */}
