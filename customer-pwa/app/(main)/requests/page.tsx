@@ -115,6 +115,13 @@ export default function RequestsPage() {
                   </span>
                 </div>
 
+                {['accepted','shopping'].includes(req.status) && (
+                  <a href={`/track?id=${req.id}`}
+                    className="w-full mt-3 py-2 text-xs font-bold text-white bg-primary
+                               rounded-xl active:scale-95 transition-transform flex items-center justify-center gap-2 no-underline">
+                    📍 Fuatilia Winga — Live
+                  </a>
+                )}
                 {req.status === 'completed' && (
                   <button className="w-full mt-3 py-2 text-xs font-bold text-primary
                                      bg-primary-soft rounded-xl active:scale-95 transition-transform">
