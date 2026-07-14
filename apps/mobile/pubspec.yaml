@@ -1,0 +1,97 @@
+name: winga_app
+description: Winga App — Tanzania's Trusted Shopping Guide Platform
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Supabase
+  supabase_flutter: ^2.3.0
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # State Management
+  flutter_riverpod: ^2.4.0
+  riverpod_annotation: ^2.3.0
+
+  # UI
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  lottie: ^3.0.0
+  flutter_animate: ^4.5.0
+  pinput: ^3.0.1           # OTP input boxes
+  modal_bottom_sheet: ^3.0.0
+
+  # Maps & Location
+  google_maps_flutter: ^2.5.3
+  geolocator: ^11.0.0
+  geocoding: ^3.0.0
+
+  # Firebase (Push Notifications)
+  firebase_core: ^2.24.0
+  firebase_messaging: ^14.7.0
+  flutter_local_notifications: ^16.1.0
+
+  # Biometric Auth
+  local_auth: ^2.1.8
+
+  # Payments
+
+  # Camera & Storage
+  image_picker: ^1.0.7
+  permission_handler: ^11.1.0
+  path_provider: ^2.1.2
+
+  # HTTP & Storage
+  dio: ^5.4.0
+  shared_preferences: ^2.2.2
+  flutter_secure_storage: ^9.0.0
+  connectivity_plus: ^5.0.2
+
+  # Utils
+  intl: ^0.19.0
+  url_launcher: ^6.2.4
+  share_plus: ^7.2.1
+  qr_flutter: ^4.1.0        # Winga QR code digital ID
+  flutter_rating_bar: ^4.0.1
+  timeago: ^3.6.0
+
+  # Icons
+  cupertino_icons: ^1.0.6
+  iconsax: ^0.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.8
+  riverpod_generator: ^2.3.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+          weight: 800

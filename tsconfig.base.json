@@ -1,0 +1,27 @@
+﻿{
+ "compilerOptions":{
+
+  "baseUrl":".",
+
+  "paths":{
+
+   "@ui/*":["packages/ui/*"],
+
+   "@utils/*":["packages/utils/*"],
+
+   "@hooks/*":["packages/hooks/*"],
+
+   "@store/*":["packages/store/*"],
+
+   "@types/*":["packages/types/*"],
+
+   "@config/*":["packages/config/*"],
+
+   "@database/*":["packages/database/*"],
+
+   "@supabase/*":["packages/supabase/*"]
+
+ }
+
+}
+}
