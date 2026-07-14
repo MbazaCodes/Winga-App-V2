@@ -32,7 +32,7 @@ export default function WingaProfilePage() {
   const [specialty, setSpecialty]     = useState<string[]>([])
   const [social, setSocial]           = useState({ instagram:'', facebook:'', tiktok:'', twitter:'', whatsapp:'' })
 
-  const badge: BadgeType = 'starter'
+  const badge = 'starter' as BadgeType
   const trips = 1
   const rating = 100
   const completion = Math.min(100, 25

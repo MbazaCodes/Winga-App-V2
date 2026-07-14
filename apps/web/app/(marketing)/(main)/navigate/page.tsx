@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client'
 import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
@@ -99,98 +100,21 @@ function NavigateContent() {
     }
   }
 
+=======
+﻿export const dynamic = 'force-dynamic'
+import { Suspense } from 'react'
+import NavigateClient from './NavigateClient'
+
+export default function NavigatePage() {
+>>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      {/* Header */}
-      <div className="flex items-center justify-between px-5 pt-12 pb-3">
-        <button onClick={() => router.back()}
-          className="w-10 h-10 bg-input-bg rounded-2xl flex items-center justify-center active:scale-90">
-          <ArrowLeft size={20} className="text-text-dark" />
-        </button>
-        <div className="text-center">
-          <h1 className="text-sm font-bold text-text-dark">Nenda kwa Mteja</h1>
-          <p className="text-xs text-text-muted">{customer.name}</p>
-        </div>
-        <div className={`w-2.5 h-2.5 rounded-full ${position ? 'bg-green-500' : 'bg-gray-300'} mr-2`} />
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <p className="text-sm text-text-muted">Inapakia ukurasa...</p>
       </div>
-
-      {/* Map */}
-      <div className="px-5 mb-4">
-        <WingaMap
-          center={position ? [position.lat, position.lng] : DAR}
-          zoom={14}
-          markers={markers}
-          routeLine={routeLine}
-          height="50vw"
-          className="border border-card-border shadow-card"
-        />
-      </div>
-
-      {/* GPS status */}
-      {position && (
-        <div className="mx-5 mb-3 px-4 py-2.5 bg-green-50 rounded-2xl border border-green-100 flex items-center gap-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <p className="text-xs font-semibold text-green-700">
-            GPS inafanya kazi — mteja anaona mahali ulipo
-          </p>
-        </div>
-      )}
-
-      {/* Customer card */}
-      <div className="mx-5 mb-4 card p-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gold/20 rounded-2xl flex items-center justify-center">
-            <span className="text-xl font-extrabold text-yellow-700">{customer.name[0]}</span>
-          </div>
-          <div className="flex-1">
-            <p className="font-bold text-text-dark">{customer.name}</p>
-            <p className="text-xs text-text-muted">{customer.phone}</p>
-          </div>
-          <a href={`tel:${customer.phone}`}
-            className="w-10 h-10 bg-green-50 rounded-2xl flex items-center justify-center active:scale-90">
-            <Phone size={18} className="text-green-600" />
-          </a>
-        </div>
-      </div>
-
-      {/* Navigate + action buttons */}
-      <div className="px-5 pb-8 space-y-3 mt-auto">
-        <a
-          href={`https://www.openstreetmap.org/directions?to=${customer.lat},${customer.lng}`}
-          target="_blank"
-          rel="noreferrer"
-          className="w-full h-12 bg-input-bg text-text-dark font-bold text-sm rounded-2xl
-                     flex items-center justify-center gap-3 active:scale-95 transition-transform">
-          <Navigation2 size={18} className="text-primary" />
-          Fungua Mwelekeo (OpenStreetMap)
-        </a>
-
-        {status === 'accepted' && (
-          <button onClick={() => advance('shopping')}
-            className="w-full h-14 bg-primary text-white font-bold text-base rounded-2xl
-                       flex items-center justify-center gap-3 shadow-card-md active:scale-95 transition-transform">
-            <ShoppingBag size={20} />
-            Ninaenda Kununua 🛒
-          </button>
-        )}
-
-        {status === 'shopping' && (
-          <button onClick={() => advance('completed')}
-            className="w-full h-14 bg-green-500 text-white font-bold text-base rounded-2xl
-                       flex items-center justify-center gap-3 shadow-card-md active:scale-95 transition-transform">
-            <CheckCircle size={20} />
-            Imekamilika ✅
-          </button>
-        )}
-
-        {status === 'completed' && (
-          <div className="w-full h-14 bg-green-100 text-green-700 font-bold text-base rounded-2xl
-                          flex items-center justify-center gap-3">
-            🎉 Safari Imekamilika! Asante!
-          </div>
-        )}
-      </div>
-    </div>
+    }>
+      <NavigateClient />
+    </Suspense>
   )
 }
 

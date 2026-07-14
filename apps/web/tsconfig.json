@@ -6,7 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+<<<<<<< HEAD
     "allowJs": true,
+=======
+    "allowJs": false,
+>>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -17,12 +21,20 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+<<<<<<< HEAD
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
+=======
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+>>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
       "@/components/*": [
         "../../packages/ui/*"
       ],
@@ -35,10 +47,37 @@
       "@/types/*": [
         "../../packages/types/*"
       ],
+<<<<<<< HEAD
       "@/*": [
         "./*"
       ]
     }
+=======
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@/api/*": [
+        "../../packages/api/*"
+      ],
+      "@/utils/*": [
+        "../../packages/utils/*"
+      ],
+      "@/config/*": [
+        "../../packages/config/*"
+      ],
+      "@/auth/*": [
+        "../../packages/auth/*"
+      ],
+      "@/assets/*": [
+        "../../packages/assets/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+>>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
   },
   "include": [
     "next-env.d.ts",
