@@ -45,7 +45,7 @@ export default function RatingsPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-sm text-text-muted italic">"{r.comment}"</p>
+                <p className="text-sm text-text-muted italic">&ldquo;{r.comment}&rdquo;</p>
                 <p className="text-[10px] text-text-muted mt-2">{r.date}</p>
               </div>
             ))}

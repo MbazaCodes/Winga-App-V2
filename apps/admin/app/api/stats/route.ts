@@ -1,14 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
-)
+import { createAdminClient } from '@/lib/supabase/client'
 
 export async function GET(req: NextRequest) {
   const token = req.cookies.get('winga_admin_session')?.value
   if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const supabase = createAdminClient()
 
   const [requestsRes, usersRes, earningsRes] = await Promise.all([
     supabase.from('requests').select('id, status, estimated_price, final_price, created_at'),

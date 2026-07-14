@@ -3,6 +3,32 @@ import { useState } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import toast from 'react-hot-toast'
 
+function Toggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <button onClick={() => onChange(!value)}
+      className={`relative w-11 h-6 rounded-full transition-colors duration-200 ${value ? 'bg-primary' : 'bg-gray-200'}`}>
+      <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200
+        ${value ? 'translate-x-5' : 'translate-x-0'}`} />
+    </button>
+  )
+}
+
+function NumberInput({ label, value, onChange, prefix = 'TZS', suffix = '' }: any) {
+  return (
+    <div className="flex items-center justify-between py-4 border-b border-card-border last:border-0">
+      <div>
+        <p className="text-sm font-semibold text-text-dark">{label}</p>
+      </div>
+      <div className="flex items-center gap-2">
+        {prefix && <span className="text-sm text-text-muted">{prefix}</span>}
+        <input type="number" value={value} onChange={e => onChange(Number(e.target.value))}
+          className="w-28 h-9 text-right border border-card-border rounded-xl px-3 text-sm font-bold text-text-dark outline-none focus:border-primary bg-input-bg" />
+        {suffix && <span className="text-sm text-text-muted">{suffix}</span>}
+      </div>
+    </div>
+  )
+}
+
 export default function SettingsPage() {
   const [commission, setCommission]   = useState(12)
   const [traTax, setTraTax]           = useState(3)
@@ -19,28 +45,6 @@ export default function SettingsPage() {
     setSaving(false)
     toast.success('Mipangilio imehifadhiwa!')
   }
-
-  const Toggle = ({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) => (
-    <button onClick={() => onChange(!value)}
-      className={`relative w-11 h-6 rounded-full transition-colors duration-200 ${value ? 'bg-primary' : 'bg-gray-200'}`}>
-      <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200
-        ${value ? 'translate-x-5' : 'translate-x-0'}`} />
-    </button>
-  )
-
-  const NumberInput = ({ label, value, onChange, prefix = 'TZS', suffix = '' }: any) => (
-    <div className="flex items-center justify-between py-4 border-b border-card-border last:border-0">
-      <div>
-        <p className="text-sm font-semibold text-text-dark">{label}</p>
-      </div>
-      <div className="flex items-center gap-2">
-        {prefix && <span className="text-sm text-text-muted">{prefix}</span>}
-        <input type="number" value={value} onChange={e => onChange(Number(e.target.value))}
-          className="w-28 h-9 text-right border border-card-border rounded-xl px-3 text-sm font-bold text-text-dark outline-none focus:border-primary bg-input-bg" />
-        {suffix && <span className="text-sm text-text-muted">{suffix}</span>}
-      </div>
-    </div>
-  )
 
   return (
     <AdminLayout title="Mipangilio">

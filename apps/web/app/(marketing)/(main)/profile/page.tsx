@@ -129,7 +129,7 @@ export default function WingaProfilePage() {
           {[
             { label:'Safari', value: trips.toString() },
             { label:'Alama %', value:`${rating}%` },
-            { label:'Badge', value: badge === 'verified' ? '✅' : badge === 'mid' ? '🔵' : '⭐' },
+            { label:'Badge', value: BADGE_INFO[badge].label.split(' ')[0] },
           ].map(s => (
             <div key={s.label} className="flex flex-col items-center px-3">
               <span className="text-xl font-extrabold text-text-dark">{s.value}</span>

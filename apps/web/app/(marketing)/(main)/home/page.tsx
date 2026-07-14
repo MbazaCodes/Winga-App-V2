@@ -183,7 +183,7 @@ export default function WingaHomePage() {
                       </span>
                     </div>
                     {req.notes && (
-                      <p className="text-xs text-text-muted mt-1 italic">"{req.notes}"</p>
+                      <p className="text-xs text-text-muted mt-1 italic">&ldquo;{req.notes}&rdquo;</p>
                     )}
                   </div>
                   <div className="text-right shrink-0 ml-3">

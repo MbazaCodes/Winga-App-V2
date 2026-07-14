@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { ArrowLeft, Navigation, Phone, MessageCircle, Clock, MapPin } from 'lucide-react'
 import dynamic from 'next/dynamic'
@@ -26,7 +26,7 @@ const STATUS_STEPS = [
   { key:'completed',  label:'Imekamilika!',         icon:'🎉', color:'text-green-600' },
 ]
 
-export default function TrackPage() {
+function TrackContent() {
   const router       = useRouter()
   const params       = useSearchParams()
   const requestId    = params.get('id') ?? ''
@@ -188,5 +188,24 @@ export default function TrackPage() {
         </button>
       </div>
     </div>
+  )
+}
+
+function TrackFallback() {
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+        <p className="text-xs text-text-muted font-semibold">Inapakia...</p>
+      </div>
+    </div>
+  )
+}
+
+export default function TrackPage() {
+  return (
+    <Suspense fallback={<TrackFallback />}>
+      <TrackContent />
+    </Suspense>
   )
 }

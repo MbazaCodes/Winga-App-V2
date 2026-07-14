@@ -1,14 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
-)
+import { createAdminClient } from '@/lib/supabase/client'
 
 export async function GET(req: NextRequest) {
   const token = req.cookies.get('winga_admin_session')?.value
   if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const supabase = createAdminClient()
 
   const url    = new URL(req.url)
   const search = url.searchParams.get('search') ?? ''
@@ -39,6 +36,8 @@ export async function GET(req: NextRequest) {
 export async function PATCH(req: NextRequest) {
   const token = req.cookies.get('winga_admin_session')?.value
   if (!token) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  const supabase = createAdminClient()
 
   const { wingaId, action, badge } = await req.json()
 
