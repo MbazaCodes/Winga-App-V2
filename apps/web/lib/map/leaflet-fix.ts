@@ -9,16 +9,16 @@ L.Icon.Default.mergeOptions({
   shadowUrl:     'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 })
 
-// Custom Winga marker (purple dot)
+// Custom Winga marker (green dot)
 export const wingaIcon = L.divIcon({
   className: '',
   html: `<div style="
     width:36px;height:36px;
-    background:linear-gradient(135deg,#6C63FF,#8B85FF);
+    background:linear-gradient(135deg,#0A8F4D,#2DA968);
     border:3px solid white;
     border-radius:50% 50% 50% 0;
     transform:rotate(-45deg);
-    box-shadow:0 4px 12px rgba(108,99,255,0.4);
+    box-shadow:0 4px 12px rgba(10,143,77,0.4);
   "></div>`,
   iconSize: [36, 36],
   iconAnchor: [18, 36],
@@ -48,16 +48,16 @@ export const activePulseIcon = L.divIcon({
   html: `<div style="position:relative;width:44px;height:44px">
     <div style="
       position:absolute;inset:0;
-      background:rgba(108,99,255,0.25);
+      background:rgba(10,143,77,0.25);
       border-radius:50%;
       animation:pulse 1.8s ease infinite;
     "></div>
     <div style="
       position:absolute;inset:6px;
-      background:linear-gradient(135deg,#6C63FF,#8B85FF);
+      background:linear-gradient(135deg,#0A8F4D,#2DA968);
       border:3px solid white;
       border-radius:50%;
-      box-shadow:0 4px 14px rgba(108,99,255,0.5);
+      box-shadow:0 4px 14px rgba(10,143,77,0.5);
     "></div>
     <style>@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.5);opacity:0}}</style>
   </div>`,

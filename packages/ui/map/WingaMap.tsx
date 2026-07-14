@@ -86,11 +86,11 @@ export default function WingaMap({
 
       const wingaHtml = (pulse: boolean) => pulse
         ? `<div style="position:relative;width:44px;height:44px">
-            <div style="position:absolute;inset:0;background:rgba(108,99,255,.25);border-radius:50%;animation:wPulse 1.8s ease infinite"></div>
-            <div style="position:absolute;inset:6px;background:linear-gradient(135deg,#6C63FF,#8B85FF);border:3px solid white;border-radius:50%;box-shadow:0 4px 14px rgba(108,99,255,.5)"></div>
+            <div style="position:absolute;inset:0;background:rgba(10,143,77,.25);border-radius:50%;animation:wPulse 1.8s ease infinite"></div>
+            <div style="position:absolute;inset:6px;background:linear-gradient(135deg,#0A8F4D,#2DA968);border:3px solid white;border-radius:50%;box-shadow:0 4px 14px rgba(10,143,77,.5)"></div>
             <style>@keyframes wPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.5);opacity:0}}</style>
            </div>`
-        : `<div style="width:36px;height:36px;background:linear-gradient(135deg,#6C63FF,#8B85FF);border:3px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 12px rgba(108,99,255,.4)"></div>`
+        : `<div style="width:36px;height:36px;background:linear-gradient(135deg,#0A8F4D,#2DA968);border:3px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 12px rgba(10,143,77,.4)"></div>`
 
       const customerHtml = `<div style="width:30px;height:30px;background:#FDBA12;border:3px solid white;border-radius:50%;box-shadow:0 4px 12px rgba(253,186,18,.4);display:flex;align-items:center;justify-content:center;font-size:14px">👤</div>`
 
@@ -109,7 +109,7 @@ export default function WingaMap({
           marker.bindPopup(`
             <div style="font-family:system-ui;min-width:120px">
               <div style="font-weight:800;font-size:13px;color:#1A1A2E">${m.label}</div>
-              ${m.badge ? `<div style="font-size:11px;color:#6C63FF;font-weight:600;margin-top:2px">${m.badge}</div>` : ''}
+              ${m.badge ? `<div style="font-size:11px;color:#0A8F4D;font-weight:600;margin-top:2px">${m.badge}</div>` : ''}
             </div>
           `, { closeButton: false })
         }
@@ -131,7 +131,7 @@ export default function WingaMap({
       routeRef.current?.remove()
       if (routeLine.length < 2) return
       routeRef.current = (L as any).polyline(routeLine, {
-        color: '#6C63FF', weight: 4, opacity: .8, dashArray: '8 4',
+        color: '#0A8F4D', weight: 4, opacity: .8, dashArray: '8 4',
       }).addTo(mapRef.current)
     })
   }, [routeLine])

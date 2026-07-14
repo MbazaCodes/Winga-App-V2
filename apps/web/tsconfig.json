@@ -1,16 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-<<<<<<< HEAD
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-=======
-    "allowJs": false,
->>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -21,72 +13,22 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-<<<<<<< HEAD
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-=======
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
->>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
-      "@/components/*": [
-        "../../packages/ui/*"
-      ],
-      "@/hooks/*": [
-        "../../packages/hooks/*"
-      ],
-      "@/store/*": [
-        "../../packages/store/*"
-      ],
-      "@/types/*": [
-        "../../packages/types/*"
-      ],
-<<<<<<< HEAD
-      "@/*": [
-        "./*"
-      ]
-    }
-=======
-      "@/lib/*": [
-        "./lib/*"
-      ],
-      "@/api/*": [
-        "../../packages/api/*"
-      ],
-      "@/utils/*": [
-        "../../packages/utils/*"
-      ],
-      "@/config/*": [
-        "../../packages/config/*"
-      ],
-      "@/auth/*": [
-        "../../packages/auth/*"
-      ],
-      "@/assets/*": [
-        "../../packages/assets/*"
-      ]
+      "@/*": ["./*"],
+      "@/components/*": ["../../packages/ui/*"],
+      "@/hooks/*": ["../../packages/hooks/*"],
+      "@/store/*": ["../../packages/store/*"],
+      "@/types/*": ["../../packages/types/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/api/*": ["../../packages/api/*"],
+      "@/utils/*": ["../../packages/utils/*"],
+      "@/config/*": ["../../packages/config/*"],
+      "@/auth/*": ["../../packages/auth/*"],
+      "@/assets/*": ["../../packages/assets/*"]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
->>>>>>> 8c10249 (fix: update web routing and TypeScript path aliases)
+    "plugins": [{ "name": "next" }]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
